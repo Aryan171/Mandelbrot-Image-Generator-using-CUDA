@@ -45,7 +45,7 @@ int main()
 	scanf("%s[^\n]s", fileName);
 	
 
-	unsigned char* img = stbi_load(fileName, &width, &height, &channels, 0), // the input file that will be turned into black and white
+	unsigned char* img = stbi_load(fileName, &width, &height, &channels, 0), // the input file whose channels will be swapped
 		* outimg = (unsigned char*)malloc(width * height * 3 * sizeof(char));
 
 	if (img == NULL) {
