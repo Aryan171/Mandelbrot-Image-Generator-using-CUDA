@@ -6,7 +6,7 @@
 #include "cuda_runtime.h"
 #include "device_launch_parameters.h"
 
-#include <stdio.h>
+#include <iostream>
 #include <string.h>
 
 #define _CRT_SECURE_NO_WARNINGS
@@ -35,8 +35,11 @@ int main()
 {
 	int width, height, channels;
 
-	char fileName[1000],
-		* outFile = "C:\\Users\\aryan\\OneDrive\\Desktop\\outputfile.png";
+	char fileName[1000], outFile[1000];
+
+	std::cout << "enter the path where the output folder should be made" << std::endl;
+	scanf(" %[^\n]s", outFile);
+	strcat(outFile, "\\outputfile.png");
 	
 	printf("enter the path of the image file\n");
 	scanf("%s[^\n]s", fileName);
